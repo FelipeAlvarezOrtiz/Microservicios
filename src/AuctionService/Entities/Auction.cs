@@ -1,5 +1,8 @@
-﻿namespace AuctionService.Entities
+﻿using System.ComponentModel.DataAnnotations.Schema;
+
+namespace AuctionService.Entities
 {
+    [Table("Auctions")]
     public sealed class Auction
     {
         public Guid Id { get; set; }
