@@ -7,7 +7,8 @@ namespace AuctionService.Data
     {
         public AuctionDbContext(DbContextOptions options) : base(options)
         {
-            
+            //esto se agrega para evitar agregar KIND en los timestamp de postgresql que paja xd
+            AppContext.SetSwitch("Npgsql.EnableLegacyTimestampBehavior", true);
         }
 
         public DbSet<Auction> Auctions { get; set; }
